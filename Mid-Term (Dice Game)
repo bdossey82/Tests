@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class DiceGame
+{
+  public static void main(String[]args)
+  {
+    Scanner input = new Scanner(System.in);
+
+    int played = 0;
+	int loss = 0;
+	int won = 0;
+	int evenGuesses = 0;
+	int oddRolls = 0;
+	int dice;
+	int playerGuess;
+	String message;
+	String guess;
+	int evenOrOdd;
+	float percentageWon;
+	boolean repeat = true;
+    
+  while(repeat)
+  {
+    dice = 1 + (int)(Math.random() * 6);
+
+    guess = JOptionPane.showInputDialog("Dice rolled...Even or Odd? \n Enter '0' for even or '1' for odd");
+
+    playerGuess = Integer.parseInt(guess); played++;
+    evenOrOdd = dice % 2;
+
+	    if (evenOrOdd == playerGuess) won++;
+        	else loss++; 
+    
+       	if (playerGuess == 0) evenGuesses++; 
+    	int evenPercentage = evenGuesses / played;
+    
+       	if (evenOrOdd == 1) oddRolls++; 
+    	int oddPercentage = oddRolls / played;
+    
+    percentageWon = won / played;
+    
+message = String.format ("You rolled a %d \nYou played %d games \nWinning percentage = %d / %d \nPercentage of even guesses: %d / %d\n Percentage of odd guesses: %d / %d", dice, played, won, played, evenGuesses, played, oddRolls, played);
+
+	JOptionPane.showMessageDialog(null, message);
+		
+    	int result = JOptionPane.showConfirmDialog(null, "Play again?");
+		
+    	if (result == JOptionPane.NO_OPTION)
+          repeat = false;
+		}
+	}
+}
