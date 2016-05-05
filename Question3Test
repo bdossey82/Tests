@@ -1,0 +1,173 @@
+import java.util.Scanner;
+
+public class Question3Test
+{
+public static void main (String[] args)
+{
+
+int choice;
+String choiceTwo;
+
+Scanner input = new Scanner(System.in);
+
+Truck truck = new Truck;
+
+Question3Test truck = new Question3Test(3);
+
+
+System.out.print("Enter in year: ");
+choice = input.nextInt();
+Truck.CarYear(choice);
+
+System.out.print("Enter in make: ");
+choiceTwo = input.next();
+Truck.CarMake(choiceTwo);
+
+System.out.print("Enter in model: ");
+choiceTwo = input.next();
+Truck.CarModel(choiceTwo);
+
+System.out.print("Enter in car color: ");
+choiceTwo = input.next();
+Truck.SetColor(choiceTwo);
+
+System.out.print("Enter in car name: ");
+choiceTwo = input.next();
+Truck.SetName(choiceTwo);
+
+System.out.print("Enter how many dice to roll: ");
+choice = input.nextInt();
+Truck.CarCycles(choice);
+Truck.CurrentGear(choice);
+System.out.println("Your current speed is " + Truck.speed());
+System.out.println("The distance you traveled was " + Truck.distance() + "miles.");
+
+		
+Question3Test van = new Question3Test(4);
+
+System.out.print("Enter in your car year: ");
+choice = input.nextInt();
+Van.CarYear(choice);
+
+System.out.print("Enter in your car make: ");
+choiceTwo = input.next();
+Van.CarMake(choiceTwo);
+
+System.out.print("Enter in your car model: ");
+choiceTwo = input.next();
+Van.CarModel(choiceTwo);
+
+System.out.print("Enter in your car color: ");
+choiceTwo = input.next();
+Van.SetColor(choiceTwo);
+
+System.out.print("Enter in your car name: ");
+choiceTwo = input.next();
+Van.SetName(choiceTwo);
+
+
+System.out.print("Enter how many dice to roll: ");
+choice = input.nextInt();
+Van.CarCycles(choice);
+Van.CurrentGear(choice);
+System.out.println("Your current speed is " + Van.speed());
+System.out.println("The distance you traveled was " + Van.distance() + "miles.");
+
+
+Question3Test sport = new Question3Test(6);
+
+System.out.print("Enter in your car year: ");
+choice = input.nextInt();
+Sport.CarYear(choice);
+
+System.out.print("Enter in your car make: ");
+choiceTwo = input.next();
+Sport.CarMake(choiceTwo);
+
+System.out.print("Enter in your car model: ");
+choiceTwo = input.next();
+Sport.CarModel(choiceTwo);
+
+System.out.print("Enter in your car color: ");
+choiceTwo = input.next();
+Sport.SetColor(choiceTwo);
+
+System.out.print("Enter in your car name: ");
+choiceTwo = input.next();
+Sport.SetName(choiceTwo);
+
+System.out.print("Enter how many dice to roll: ");
+choice = input.nextInt();
+Sport.CarCycles(choice);
+Sport.CurrentGear(choice);
+System.out.println("Your current speed is " + Sport.speed());
+System.out.println("The distance you traveled was " + Sport.distance() + "miles.");
+
+}
+}
+
+public class Question3Test
+{
+
+private int year;
+private String make;
+private int counter;
+private int totalDistance;
+private int gears;
+private int cycles;
+private int currentGear;
+private int currentCycle;
+private String model;
+private String color;
+private String name;	
+
+public Question3Test(int g)
+{gears = g;}
+
+public void CarYear(int y)
+{year = y;}
+
+public void CarMake(String Make)
+{make = Make;}
+
+public void CarModel(String Model)
+{model = Model;}
+
+public void CarGears(int g)
+{gears = g;}
+
+public void SetColor(String c)
+{color = c;}
+
+public void SetName(String n)
+{name = n;}
+
+public void CarCycles()
+{cycles = Question3Test.OneThrow(1);}
+
+public void CurrentGear()
+{currentGear = Question3Test.OneThrow(1);}
+	
+public int speed()
+{return currentGear * 10;}
+
+public int distance()
+{counter = cycles; 
+while (counter != 0)
+{
+currentCycle = (currentGear * 10) / 60;
+distanceTraveled = distanceTraveled + currentCycle; counter--;
+}
+return distanceTraveled;
+}
+}
+
+public class Question3Test
+{
+private static int ranNum;
+public static int OneThrow(int dices)
+{
+ranNum = dices + (int)(Math.random() * (6 * dices) - (1 - dices));
+return ranNum;
+}
+}
